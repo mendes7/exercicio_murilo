@@ -1,7 +1,7 @@
 header {
     display: flex;
     justify-content: space-between;
-    background-color: #3A4042;
+
     border-bottom: 10px solid #242325;
     padding: 10px 20px;
 }
@@ -12,50 +12,67 @@ header {
 
 }
 
-nav {
-
-    text-align: right;
-
+body {
+    background-color: #3A4042;
+    justify-content: space-between;
+    
+    transition: background 0.2s linear;
 }
 
-a {
+body.light {
+    background: #fafafa;
+}
+
+#lightmode {
+    align-items: center;
+    padding-top: 16px;
+    padding-right: 10px;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.label {
+    background-color: #242325;
+    border-radius: 0;
+    cursor: pointer;
 
     display: inline-flex;
-    align-items: center ;
-    color: #F5F5F5;
-    font-size: 20px;
-    font-family: "Fira Code", Arial, Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    text-decoration: none;
-    margin-right: 30px;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+
+    transform: scale(1.5);
 }
 
-#opcoes-header::before {
+.label .square {
+    background-color: #fafafa;
+    border-radius: 0%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
 
-    content: "";
-    display: inline-block;
-    background-color: #7C5E99;
-    width: 10px;
-    height: 10px;
-    margin-right: 10px;
+    height: 22px;
+    width: 22px;
+
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
 }
 
-#button {
-
-    display: inline-block;
-    background-color: #828282;
-    padding: 18px 20px;
-    box-shadow: 6px 6px 0 #242325;
-    margin-right: 0;
-    transition: transform 100ms linear, background-color 370ms ease;
-
+.checkbox:checked + .label .square {
+    transform: translateX(24px);
 }
 
-#button:hover {
-
-    background-color: #7C5E99;
-    transform: scale(1.05);
-    
+.fa-moon {
+    color: #f1c40f;
 }
 
-
+.fa-sun {
+    color: #f39c12
+}
